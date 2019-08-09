@@ -476,7 +476,6 @@ function hello() {
 
   // старт 
   function start() {
-    hello();
     d.data('player', '1');
     $('div.indicator > div').text('ходит игрок 1').parent().animate({ top: '372px' }, 500);
     $('div.score').show();
