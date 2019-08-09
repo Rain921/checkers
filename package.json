@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "gulp-install": "^1.1.0",
-    "express": "^4.16.3",
-    "jquery": "^2.2.2"
+    "express": "^4.16.3"
   }
 }
