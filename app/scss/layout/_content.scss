@@ -1,0 +1,398 @@
+//main styles
+
+.main-wrapper {
+    padding: 0 0 0 0;
+    min-width: $min-width;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+}
+
+.wrapper {
+    min-width: $min-width;
+    max-width: $max-width;
+    padding: 0 40px 0 40px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* titles */
+p {
+    @include font($base-font-size, $base-line-height, $text-color);
+    padding: 15px 0 15px 0;
+    font-weight: 400;
+}
+
+h1 {
+    @include font($font-size-h1, $line-height-h1, $title-color);
+    font-family: $title-font-family;
+    padding: 15px 0 15px 0;
+    font-weight: 400;
+}
+
+h2 {
+    @include font($font-size-h2, $line-height-h2, $title-color);
+    font-family: $title-font-family;
+    padding: 15px 0 15px 0;
+    font-weight: 400;
+}
+
+h3 {
+    @include font($font-size-h3, $line-height-h3, $title-color);
+    font-family: $title-font-family;
+    padding: 15px 0 15px 0;
+    font-weight: 400;
+}
+
+/* text position */
+.text-left {
+    text-align: left !important
+}
+
+.text-center {
+    text-align: center !important
+}
+
+.text-right {
+    text-align: right !important
+}
+
+.nowrap {
+    white-space: nowrap !important;
+}
+
+
+/* loader */
+.loaded .main-wrapper {
+    visibility: hidden;
+}
+
+.icon-load {
+    background: url(../img/loader.gif) no-repeat left top;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-left: -20px;
+    display: none;
+}
+
+.loaded .icon-load {
+    display: block;
+}
+
+
+/*
+================================================================================
+|                                     CONTENT                                 |
+================================================================================
+*/
+.content {
+    min-width: $min-width;
+    text-align: left;
+    width: 100%;
+    order: 2;
+    -webkit-order: 2;
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    background: #fff000;
+    text-align: center;
+    transition: .9s linear all;
+}
+
+body {
+    margin: auto;
+
+}
+
+.board-container {
+    display: inline-block;
+    position: relative;
+
+}
+
+
+table.board {
+    border: 4px solid #000;
+    position: relative;
+
+}
+
+table.board td {
+    border: 0px solid #f0f0f0;
+    position: relative;
+    height: 54px;
+    width: 54px;
+}
+
+td.td1 {
+    background: #fff;
+}
+
+td.td2 {
+    background: #733e16;
+}
+
+.pawn1 {
+    background: #fff;
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.pawn1:before {
+    border: 2px solid #f33;
+    border-radius: 100px;
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.queen1:after {
+    background: #f33;
+    border-radius: 100px;
+    content: '';
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    left: 13px;
+    top: 13px;
+}
+
+.pawn2 {
+    background: #f33;
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.pawn2:before {
+    border: 2px solid #fff;
+    border-radius: 100px;
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.queen2:after {
+    background: #fff;
+    border-radius: 100px;
+    content: '';
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    left: 13px;
+    top: 13px;
+}
+
+td.hover {
+    background: #945c33;
+}
+
+td.checked {
+    background: #a66d43;
+}
+
+td.possible {
+    background: #84a3cc;
+}
+
+td.possible:hover {
+    background: #a5bfe3;
+}
+
+.message2 {
+    position: relative !important;
+    top: 5px !important;
+    margin: auto;
+    left: auto !important;
+    transform: none !important;
+    transition: .9s linear all;
+
+
+}
+
+.message {
+    background: #000;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    padding: 20px;
+    min-height: 40px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    position: absolute;
+    right: 0%;
+    bottom: 100px;
+}
+
+
+
+.indicator {
+    background: #000;
+    border-radius: 3px 0 0 3px;
+    color: #fff;
+    font-size: 13px;
+    padding: 0 10px 0 15px;
+    text-align: center;
+    height: 20px;
+    padding-top: 2px;
+    position: absolute;
+    left: -206px;
+    top: 207px;
+}
+
+.indicator:after {
+    border-left: 10px solid #000;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+.timer {
+    background: #000;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 10px;
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+
+.score {
+    background: #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 20px;
+    text-align: center;
+    position: absolute;
+    right: 50px;
+    bottom: 0px;
+}
+
+.shadow {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 57px;
+    height: 100%;
+    width: 490px;
+}
+
+input.start {
+    background: url('img/button.png') top repeat-x #aaaba6;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Palatino Linotype;
+    font-size: 17px;
+    margin: 2px 1px;
+    padding: 14px 18px;
+    text-decoration: none;
+    width: 367px;
+    position: absolute;
+    left: 54px;
+    top: 210px;
+}
+
+input.start:hover {
+    background: #aaaba6;
+}
+
+.win {
+    background: rgba(255, 255, 255, 0.8);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.win div {
+    background: #000;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 30px;
+    padding: 20px;
+    height: 20%;
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    right: 30%;
+    top: 38%;
+}
+
+.gray {
+    background-color: #999 !important;
+
+}
+
+.hide2 {
+    opacity: 0;
+}
+
+
+.hide {
+    display: none !important;
+}
+
+
+
+/*SCSS smartgrid
+
+.items{
+    @include row-flex();
+    @include md(justify-content, center);
+ 
+    .item{
+        @include col();
+        @include size(3);
+        @include size-md(5);
+        @include size-xs(10);
+    }
+}*/
+
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {}
